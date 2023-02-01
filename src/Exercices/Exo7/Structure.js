@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Main from './Main';
+
 
 function Structure() {
   return (

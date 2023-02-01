@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
 
-import Structure from './Exercices/Exo6/Structure';
+import Structure from './Exercices/Exo7/Structure';
 
 function App() {
 
