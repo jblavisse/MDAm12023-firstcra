@@ -7,10 +7,17 @@ import React, {useState} from 'react';
 
 function App() {
   const [firstname, setFirstname] = useState("Gertrude");
+  const [input, setInput] = useState("");
 
   function handleChange(event) {
     console.log(event.target.value);
-    setFirstname(event.target.value);
+    setInput(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    setFirstname(input);
   }
 
   return (
@@ -22,9 +29,15 @@ function App() {
 
         <p>Prénom: {firstname}</p>
 
-        <label htmlFor="firstnameInput">Entrez votre prénom:</label>
-        <input type="text" id="firstnameInput"
-          value={firstname} onChange={handleChange} />
+        <form onSubmit={handleSubmit}>
+
+          <label htmlFor="firstnameInput">Entrez votre prénom:</label>
+          <input type="text" id="firstnameInput"
+            value={input} onChange={handleChange} />
+
+            <button type="submit">OK</button>
+        </form>
+
       </div>
     </div>
   );
